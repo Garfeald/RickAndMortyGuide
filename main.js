@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 /// !!!! ///
 
-const selectRequest = ((classCharacter, url) => {
+function selectRequest(classCharacter, url){
   $(classCharacter).click((event) => {
     $("#alive").empty();
     fetch(url)
@@ -60,7 +60,7 @@ const selectRequest = ((classCharacter, url) => {
 
 })
   })
-})
+}
 
 // копция запроса на вывод живых риков
 
