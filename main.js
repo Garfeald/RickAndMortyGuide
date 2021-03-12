@@ -65,7 +65,20 @@ const selectRequest = ((classCharacter, url) => {
 // копция запроса на вывод живых риков
 
 $(document).ready(() => {
-  selectRequest('.aliveRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=alive');
+  $('.aliveRicks_select').click((event) => {
+    $("#alive").empty();
+    fetch('https://rickandmortyapi.com/api/character?name=rick&status=alive')
+.then((response) => {
+  return response.json();
+})
+                          
+.then((data) => {
+  data.results.map((i) => {
+    $("#alive").prepend(`<div class="aliveRicks-item" style='background-image: url(${i.image})'><p class="aliveRicks-names">${i.name}</p></div>`);
+  })
+
+})
+  })
 })
 
 // опция запроса на вывод живых морти
