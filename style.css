@@ -46,6 +46,17 @@ body{
     margin: 30px 8%;
 }
 
+.block_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.requestButton{
+    width: 150px;
+    height: 50px;
+}
+
 .option{
     background-color: transparent;
 }
