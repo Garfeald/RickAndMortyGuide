@@ -45,9 +45,9 @@ $(document).ready(function(){
 
 /// !!!! ///
 
-function selectRequest(classCharacter, url){
+function selectRequest(classCharacter, url, event){
   $(classCharacter).click((event) => {
-    // $("#alive").empty();
+    $("#alive").empty();
     fetch(url)
 .then((response) => {
   return response.json();
@@ -55,7 +55,7 @@ function selectRequest(classCharacter, url){
                           
 .then((data) => {
   data.results.map((i) => {
-    $("#alive").prepend(`<div class="aliveRicks-item" style='background-image: url(${i.image})'><p class="aliveRicks-names">${i.name}</p></div>`);
+    $("#alive").append(`<div class="aliveRicks-item" style='background-image: url(${i.image})'><p class="aliveRicks-names">${i.name}</p></div>`);
   })
 
 })
@@ -70,3 +70,5 @@ selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?
 
 // опция запроса на вывод живых Jerry
 selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
+
+
