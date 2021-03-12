@@ -10,7 +10,7 @@ $(document).ready(function(){
     autoplay: true,
     autoplaySpeed: 2000,
     centerPadding: '60px',
-    slidesToShow: 3,
+    slidesToShow: 5,
     sliderToScroll: 1,
     speed: 1000,
     responsive: [
