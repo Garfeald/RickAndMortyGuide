@@ -1,0 +1,157 @@
+*,*:before,*:after{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+select{
+    cursor: pointer;
+}
+
+select option{
+    cursor: pointer;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: linear-gradient(0.25turn, #8b9ba1, #69df0f, #f38004);
+}
+
+.wrapper{
+	height: 100%;
+	width: 100%;
+}
+
+.slider{
+    margin-top: 20px;
+    display: flex;
+    min-width: 0;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.slick-slider{
+	min-width: 0;
+    text-align: center;
+}
+
+.block_select{
+    display: flex;
+    justify-content: center;
+    margin: 30px 8%;
+}
+
+.option{
+    background-color: transparent;
+}
+
+.requestButtons{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider_item{
+    text-align: center;
+    margin: 0px 20px;
+    width: 500px;
+    height: 300px;
+}
+
+.slider_img{
+    width: 300px;
+}
+
+/* !!!!!  Кнопки запроса персонажей  !!!!! */
+
+.aliveRicks_button{
+    width: 200px;
+    height: 50px;
+    background-color: seagreen;
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: seashell;
+    margin: 0 10px 0 10px;
+}
+
+.aliveRicks_button:hover{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(245, 247, 250);
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+}
+
+.aliveMortys_button{
+    width: 200px;
+    height: 50px;
+    background-color: seagreen;
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: seashell;
+    margin: 0 10px 0 10px;
+}
+
+.aliveMortys_button:hover{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(245, 247, 250);
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+}
+
+.aliveJerrys_button{
+    width: 200px;
+    height: 50px;
+    background-color: seagreen;
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: seashell;
+    margin: 0 10px 0 10px;
+}
+
+.aliveJerrys_button:hover{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(245, 247, 250);
+    border-radius: 5px;
+    box-shadow: 5px;
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+}
+
+/*  !!!!!  */
+
+.aliveRicks{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.aliveRicks-item{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 20px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,10);
+}
+
+.aliveRicks-names{
+    color:rgb(245, 247, 242);
+    background-color: royalblue;
+}

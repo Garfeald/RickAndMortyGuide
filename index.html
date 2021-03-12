@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Rick&MortyUniverse</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slider">
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/435.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/319.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/394.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/313.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/33.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/67.jpeg" alt="image">
+            </div>
+            <div class="slider_item">
+                <img src="https://rickandmortyapi.com/api/character/avatar/7.jpeg" alt="image">
+            </div>
+        </div>
+        <div class="block_select">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" placeholder="Choose character">
+                <option id="option" class="option aliveRicks_select">AliveRicks</option>
+                <option id="option" class="option aliveMortys_select">AliveMortys</option>
+                <option id="option" class="option aliveJerrys_select">AliveJerrys</option>
+            </select>
+        </div>
+    </div>
+    <div id="alive" class="aliveRicks"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
