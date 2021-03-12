@@ -64,18 +64,24 @@ function selectRequest(classCharacter, url){
 
 // копция запроса на вывод живых риков
 
-$(document).ready(() => {
-  selectRequest('.aliveRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=alive');
-})
+selectRequest('.aliveRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=alive');
+
+// $(document).ready(() => {
+  // selectRequest('.aliveRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=alive');
+  // selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=alive');
+  // selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
+// })
 
 // опция запроса на вывод живых морти
+selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=alive');
 
-$(document).ready(() => {
-  selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=alive');
-})
+// $(document).ready(() => {
+  // selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=alive');
+// })
 
 // опция запроса на вывод живых Jerry
+selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
 
-$(document).ready(() => {
-  selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
-})
+// $(document).ready(() => {
+  // selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
+// })
