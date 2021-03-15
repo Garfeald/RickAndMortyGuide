@@ -38,7 +38,7 @@ body{
 .block_select{
     display: flex;
     justify-content: center;
-    margin: 30px 8%;
+    margin: 5% 8%;
 }
 
 .block_buttons{
@@ -55,12 +55,15 @@ body{
 }
 
 .slider_img{
-    width: 300px;
+    width: 85%;
 }
 
 .slider_item{
     transition: all 0.3s ease 0s;
-    max-width: 400px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 350px;
+    max-height: 350px;
     opacity: 0.2;
     text-align: center;
 }
@@ -113,6 +116,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .requestButton{
@@ -122,5 +126,21 @@ body{
 
     .block_select{
         display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .slider_item{
+        transition: all 0.3s ease 0s;
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 350px;
+        max-height: 350px;
+        opacity: 1;
+        text-align: center;
+    }
+
+    .slider_item.slick-center{
+        opacity: 1;
     }
 }
