@@ -9,7 +9,6 @@ $(document).ready(function(){
     centerMode: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    centerPadding: '60px',
     slidesToShow: 5,
     sliderToScroll: 3,
     speed: 1000,
@@ -19,7 +18,6 @@ $(document).ready(function(){
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '60px',
           slidesToShow: 3,
           slidesToScroll: 1
         }
@@ -29,7 +27,6 @@ $(document).ready(function(){
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '60px',
           slidesToShow: 3,
           slidesToScroll: 1
         }
@@ -39,10 +36,9 @@ $(document).ready(function(){
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '60px',
           slidesToShow: 3,
           slidesToScroll: 1,
-          speed: 1000
+          autoplaySpeed: 1000
         }
       },
       {
@@ -50,10 +46,9 @@ $(document).ready(function(){
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '60px',
           slidesToShow: 1,
-          slidesToScroll: 3,
-          speed: 500
+          slidesToScroll: 1,
+          autoplaySpeed: 1000
         }
       }
     ]
@@ -66,6 +61,10 @@ $(document).ready(function(){
 
 // click по картинки - запрос информации
 
+const inputEventPreventDefault = (event) => {
+  event.preventDefault();
+}
+
 const infoClick = (id) => {
   $("#alive").empty();
   fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -73,7 +72,6 @@ const infoClick = (id) => {
     return response.json();
   })
   .then((data) => {
-    console.log(data)
     $("#alive").append(
       `<div class="image__deteils">
         <img class="image__deteils-img" src='${data.image}' />
@@ -81,55 +79,42 @@ const infoClick = (id) => {
           <p>Name: ${data.name}</p>
           <p>Status: ${data.status}</p>
           <p>Species: ${data.species}</p>
+          <p>Gender: ${data.gender}</p>
         </div>
       </div>`
       );
   })
+  document.getElementById('datalistOptions').innerHTML = ''
 }
 
 
 // !!!!!  //
 
-
-// !!!!! api request function !!!!! //
-
-function selectRequest(classCharacter, url, event){
-  $(classCharacter).click((event) => {
-    $("#alive").empty();
-    fetch(url)
-.then((response) => {
-  return response.json();
-})
-                          
-.then((data) => {
-  data.results.map((i) => {
-    $("#alive").append(`<div #="image" class="aliveRicks-item" onclick="infoClick(${i.id})" style='background-image: url(${i.image})'><p #="name" class="aliveRicks-names">${i.name}</p></div>`);
-  })
-
-})
-  })
+const getNamesList = (value) => {
+  $('#datalistOptions').empty();
+  if(value != ''){
+    fetch(`https://rickandmortyapi.com/api/character?name=${value}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data)
+      data.results.map((i) => {
+        $('#datalistOptions').append(`<li onclick="infoClick(${i.id}, event)" class="listOfCharacters">${i.name}</li>`)
+      })
+    })
+  }
+  document.getElementById('alive').innerHTML = ''
 }
 
-// !!!!! //
+const showNamesList = () => {
+  const value = document.querySelector('#autocomlete').value;
+  getNamesList(value)
+}
 
-// опция запроса на вывод живых риков
-selectRequest('.aliveRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=alive');
-
-// опция запроса на вывод живых морти
-selectRequest('.aliveMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=alive');
-
-// опция запроса на вывод живых Jerry
-selectRequest('.aliveJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=alive');
-
-// опция запроса на вывод мёртвых риков
-selectRequest('.deadRicks_select', 'https://rickandmortyapi.com/api/character?name=rick&status=dead');
-
-// опция запроса на вывод мёртвых риков
-selectRequest('.deadMortys_select', 'https://rickandmortyapi.com/api/character?name=morty&status=dead');
-
-// опция запроса на вывод мёртвых риков
-selectRequest('.deadJerrys_select', 'https://rickandmortyapi.com/api/character?name=jerry&status=dead');
-
-
+const useEffect = document.getElementById('autocomlete').addEventListener(
+     'input', 
+       () => {showNamesList()}
+)
 
 

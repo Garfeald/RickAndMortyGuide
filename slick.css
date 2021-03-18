@@ -4,7 +4,7 @@
     
 }
 .slick-slide{
-    text-align: center;
+    
 }
 .slick-list
 {
@@ -17,14 +17,13 @@
 }
 .slick-loading .slick-track
 {
-    visibility: hidden;
+    
 }
 .slick-slide img
 {
-    display: block;
-    box-shadow: 0 0 10px rgba(0,0,0,7);
+    
 }
-.slick-slide.slick-loading img
+.slick-current
 {
-    display: none;
+   
 }

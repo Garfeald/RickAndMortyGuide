@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./slick.css">
+    <link rel="stylesheet" href="css/normolize-css.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Rick&MortyUniverse</title>
 </head>
@@ -34,28 +35,23 @@
                 <img class="slider_img" src="https://rickandmortyapi.com/api/character/avatar/7.jpeg" alt="image">
             </div>
         </div>
-        <div class="block_buttons">
-            <button class="requestButton aliveRicks_select">Rick</button>
-            <button class="requestButton aliveMortys_select">Morty</button>
-            <button class="requestButton aliveJerrys_select">Jerry</button>
-            <button class="requestButton deadRicks_select">DeadRicks</button>
-            <button class="requestButton deadMortys_select">DeadMorty</button>
-            <button class="requestButton deadJerrys_select">DeadJerry</button>
-        </div>
-        <div class="block_select">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" placeholder="Choose character">
-                <option id="option" class="option aliveRicks_select">AliveRicks</option>
-                <option id="option" class="option aliveMortys_select">AliveMortys</option>
-                <option id="option" class="option aliveJerrys_select">AliveJerrys</option>
-                <option id="option" class="option deadRicks_select">DeadRicks</option>
-                <option id="option" class="option deadMortys_select">DeadMorty</option>
-                <option id="option" class="option deadJerrys_select">DeadJerry</option>
-            </select>
+    </div>
+    <div class="block_autocomplete">
+        <input 
+            class="form-control" 
+            list="datalistOptions" 
+            type="search" 
+            id="autocomlete" 
+            placeholder="Input character's name..." 
+            onclick="inputEventPreventDefault(event)"
+        >
+        <div #="block-datalist" class="block-datalist">
+            <ul id="datalistOptions" class="datalistOptions"></ul>
         </div>
     </div>
     <div id="alive" class="aliveRicks"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./slick.min.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
