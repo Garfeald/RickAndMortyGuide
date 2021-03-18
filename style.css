@@ -151,5 +151,9 @@ body{
     body{
         background: linear-gradient(0.25turn, #8b9ba1, #8fbbc9, #319bc5);
     }
+	
+    .slider{
+        height: 150px !important;
+    }	
 }
 
